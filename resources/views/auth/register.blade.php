@@ -54,6 +54,14 @@
             </label>
         </div>
 
+        <!-- Checkbox for Terms and Conditions -->
+        <div>
+            <label class="flex items-center">
+                <input type="checkbox" id="termsCheckbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-green-500 shadow-sm focus:ring-green-500 dark:focus:ring-green-500 dark:focus:ring-offset-gray-800" />
+                <span class="m-2 pt-4 text-sm leading-5 text-gray-600 dark:text-gray-400"> I agree that my preparation of food is done only at my home kitchen.</span>
+            </label>
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             <x-light-dark-toggle />
             <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">

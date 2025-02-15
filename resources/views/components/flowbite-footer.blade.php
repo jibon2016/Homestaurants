@@ -43,8 +43,11 @@
 
 <!-- This is an example component -->
 <div class="bg-white shadow-lg dark:bg-gray-800 @if(auth()->check()) mb-10 pb-10 @endif">
-    <div class="max-w-2xl mx-auto dark:text-white text-gray-900">
+    <div class="max-w-3xl mx-auto dark:text-white text-gray-900">
         <div class="text-center">
+            <div class="flex justify-center pt-5 pb-2">
+                <x-flowbite-logo />
+            </div>
             <div class="flex justify-center py-5">
                 <div class="flex items-center px-4 py-2 border border-gray-600 dark:border-gray-200 rounded-lg w-44 mx-2">
                     <img src="{{asset('images/google-play.png')}}" class="w-7 md:w-8">
@@ -65,12 +68,14 @@
         </div>
 
 
-        <div class="flex flex-col py-6 md:flex-row md:justify-between items-center text-sm text-gray-800 dark:text-gray-200">
+        <div class="flex flex-col py-6 md:flex-row md:justify-between text-center items-center text-sm text-gray-800 dark:text-gray-200">
             <p class="order-2 md:order-1 mt-6 md:mt-0"> &copy; HOMESTAURANT'S 2023 </p>
             <div class="order-1 md:order-2 text-gray-800 dark:text-gray-200">
-                <span class="px-2"><a href="{{route('about-us')}}">About</a></span>
-                <span class="px-2 border-l border-gray-700 dark:border-gray-300"><a href="{{route('contact')}}">Contact</a></span>
-                <span class="px-2 border-l border-gray-700 dark:border-gray-300"><a href="{{route('privacy-policy')}}">Privacy Policy</a></span>
+                <span class="px-2 hover:text-green-400"><a href="{{route('about-us')}}">About</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('contact')}}">Contact</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('recipes')}}">Recipes</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('newsroom')}}">Newsroom</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('privacy-policy')}}">Privacy Policy</a></span>
             </div>
 
             <div class="flex py-2 space-x-6 sm:justify-center">

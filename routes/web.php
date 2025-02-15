@@ -27,6 +27,12 @@ Route::get('/about-us', function(){
 Route::get('privacy-policy', function(){
     return view('privacy-policy');
 })->name('privacy-policy');
+Route::get('recipes', function(){
+    return view('recipes');
+})->name('recipes');
+Route::get('newsroom', function(){
+    return view('newsroom');
+})->name('newsroom');
 Route::get('terms-conditions', function(){
     return view('terms-conditions');
 })->name('terms-conditions');

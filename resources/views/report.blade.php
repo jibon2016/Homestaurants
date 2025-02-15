@@ -3,7 +3,7 @@
         <section class="bg-gray-50 dark:bg-gray-900 mt-10 pt-10 pb-4 max-w-4xl mx-auto">
             <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
                 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Report</h2>
-                <p class="mb-8 pb-4 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">If you have faced any negative thing from our vendor and rider feel free to give information.</p>
+                <p class="mb-8 pb-4 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">If you have faced any issues related to your order please feel free to inform.</p>
                 <!-- Update the form action to point to the 'contact.send' route -->
                 <form action="{{ route('report.send') }}" method="post" class="space-y-4">
                     @csrf <!-- Add CSRF protection -->
@@ -16,7 +16,8 @@
                         <label for="report_on" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Report on</label>
                         <select name="report_on" id="report_on" class="shadow-sm mb-4 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500 dark:shadow-sm-light">
                             <option value="homestaurant">Homestaurant</option>
-                            <option value="rider">Rider</option>
+                            <option value="vendor">Vendor</option>
+                            <option value="customer">Customer</option>
                             <option value="both">Homestaurant and Rider</option>
                         </select>
                     </div>
