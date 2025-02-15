@@ -3,10 +3,10 @@
     <form action="{{ route('nearby.all.foods', $categoryId) }}" method="GET" class="flex">
         <div class="flex sm:flex-row items-center">
             <label for="category"></label>
-            <select id="category" name="category" class="rounded-l-md mb-2 w-8 border border-gray-500">
+            <select id="category" name="category" class="rounded-l-md mb-2 w-8 md:w-32 border border-gray-500">
                 <option value=""></option>
-                @foreach ($nearVendorFoodCategories as $categoryName => $categoryId )
-                    <option value="{{ $categoryId }}" {{ $categoryId == $selectedCategory ? 'selected' : '' }}>{{ $categoryName }}</option>
+                @foreach ($categories as $category )
+                    <option value="{{ $category->id }}" {{ $category->id == $selectedCategory ? 'selected' : '' }}>{{ $category->name }}</option>
                 @endforeach
             </select>
             <input type="text" name="food_name" placeholder="Type food name" class="mb-2" value="{{ $food_name }}">

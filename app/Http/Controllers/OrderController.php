@@ -252,7 +252,8 @@ if ($request->payment_method === 'stripe') {
                 'delivery_men_id' => null, // If applicable, provide the delivery men ID
                 //'delivery_charge' => $cartItem->food->vendor->deliveryCharge->charge * $vendorDistance * $cartItem->quantity,
                 'delivery_charge' => $cartItem->food->vendor->deliveryCharge->charge * $vendorDistance,
-                'earn_price' => $cartItem->food->final_price * $cartItem->quantity * 0.90,
+//                'earn_price' => $cartItem->food->final_price * $cartItem->quantity * 0.90,
+                'earn_price' => 0,
                 'order_status' => 'Pending',
                 'currency' => $cartItem->food->currency,
                 'delivery_option' => $order->delivery_option,

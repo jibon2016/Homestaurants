@@ -1,60 +1,53 @@
-<div class="fixed shadow-2xl bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
-    <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
-        <a href="{{route('vendor.dashboard')}}" class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
-            </svg>
-            <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Home</span>
-        </a>
-        <a href="{{route('vendor.notifications.index')}}" class="relative inline-flex flex-col items-center justify-center px-5 border-r border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
-            <svg class="w-6 h-6 mt-1 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"/>
-            </svg>
-            <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Notifications</span>
-            @if ($unreadNotifications > 0)
-            <span class="absolute top-0 center ml-4 bg-yellow-500 text-xs text-white rounded-full w-5 h-4 flex items-center justify-center">{{$unreadNotifications}}</span>
-            @else
-            {{-- <span class="absolute top-0 center ml-4 bg-yellow-500 text-xs text-white rounded-full w-5 h-4 flex items-center justify-center">0</span> --}}
-            <span></span>
-            @endif
-        </a>
+@if (auth()->check())
+    <div class="fixed shadow-2xl bottom-0 left-0 z-50 w-full h-16 bg-white border-t border-gray-200 dark:bg-gray-700 dark:border-gray-600">
+        <div class="grid h-full max-w-lg grid-cols-4 mx-auto font-medium">
+            <a href="/" class="inline-flex flex-col items-center justify-center px-5 border-gray-200 border-x hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
+                <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Home</span>
+            </a>
+            <a href="{{route('customer.notifications.index')}}" class="relative inline-flex flex-col items-center justify-center px-5 border-r border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group dark:border-gray-600">
+                <svg class="w-6 h-6 mt-1 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5"/>
+                </svg>
+                <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Notifications</span>
+                @if ($unreadNotifications > 0)
+                    <span class="absolute top-0 center ml-4 bg-yellow-500 text-xs text-white rounded-full w-5 h-4 flex items-center justify-center">{{$unreadNotifications}}</span>
+                @else
+                    {{-- <span class="absolute top-0 center ml-4 bg-yellow-500 text-xs text-white rounded-full w-5 h-4 flex items-center justify-center">0</span> --}}
+                    <span></span>
+                @endif
+            </a>
 
-        <a href="{{route('vendor.orders')}}" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"/>
-            </svg>
-            <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Orders</span>
-        </a>
-        <a href="{{route('vendor.profile.edit')}}" class="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600">
-            <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
-            </svg>
-            <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Profile</span>
-        </a>
+            <a href="{{route('customer.orders')}}" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
+                <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12.25V1m0 11.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M4 19v-2.25m6-13.5V1m0 2.25a2.25 2.25 0 0 0 0 4.5m0-4.5a2.25 2.25 0 0 1 0 4.5M10 19V7.75m6 4.5V1m0 11.25a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM16 19v-2"/>
+                </svg>
+                <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">Orders</span>
+            </a>
+            <a href="/profile" class="inline-flex flex-col items-center justify-center px-5 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800 group border-x dark:border-gray-600">
+                @if (!empty(auth()->user()->avatar))
+                    <img src="{{asset('storage/'. auth()->user()->avatar)}}" alt="profile photo" class="w-7 h-7 rounded-full">
+                @else
+                    <svg class="w-5 h-5 mb-2 text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 0a10 10 0 1 0 10 10A10.011 10.011 0 0 0 10 0Zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 13a8.949 8.949 0 0 1-4.951-1.488A3.987 3.987 0 0 1 9 13h2a3.987 3.987 0 0 1 3.951 3.512A8.949 8.949 0 0 1 10 18Z"/>
+                    </svg>
+                @endif
+                <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-500">{{ isset(auth()->user()->name) ? explode(' ', auth()->user()->name)[0] : 'Profile' }}
+            </span>
+            </a>
+        </div>
     </div>
-</div>
-
-
-{{-- <footer class="mb-16 left-0 z-20 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-900 dark:border-gray-600">
-    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://homestaurants.com/" class="hover:underline">Homestaurant's™</a>. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="{{route('about-us')}}" class="mr-4 hover:underline md:mr-6">About</a>
-        </li>
-        <li>
-            <a href="{{route('privacy-policy')}}" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
-        </li>
-        <li>
-            <a href="#" class="hover:underline">Contact</a>
-        </li>
-    </ul>
-</footer> --}}
+@endif
 
 <!-- This is an example component -->
-<div class="bg-gray-50 shadow-lg dark:bg-gray-900 @if(auth()->check()) mb-10 pb-10 @endif">
-    <div class="max-w-2xl mx-auto dark:text-white text-gray-900">
+<div class="bg-white shadow-lg dark:bg-gray-800 @if(auth()->check()) mb-10 pb-10 @endif">
+    <div class="max-w-3xl mx-auto dark:text-white text-gray-900">
         <div class="text-center">
+            <div class="flex justify-center pt-5 pb-2">
+                <x-flowbite-logo />
+            </div>
             <div class="flex justify-center py-5">
                 <div class="flex items-center px-4 py-2 border border-gray-600 dark:border-gray-200 rounded-lg w-44 mx-2">
                     <img src="{{asset('images/google-play.png')}}" class="w-7 md:w-8">
@@ -75,12 +68,14 @@
         </div>
 
 
-        <div class="flex flex-col py-6 md:flex-row md:justify-between items-center text-sm text-gray-800 dark:text-gray-200">
+        <div class="flex flex-col py-6 md:flex-row md:justify-between text-center items-center text-sm text-gray-800 dark:text-gray-200">
             <p class="order-2 md:order-1 mt-6 md:mt-0"> &copy; HOMESTAURANT'S 2023 </p>
             <div class="order-1 md:order-2 text-gray-800 dark:text-gray-200">
-                <span class="px-2"><a href="{{route('about-us')}}">About</a></span>
-                <span class="px-2 border-l border-gray-700 dark:border-gray-300"><a href="{{route('contact')}}">Contact</a></span>
-                <span class="px-2 border-l border-gray-700 dark:border-gray-300"><a href="{{route('privacy-policy')}}">Privacy Policy</a></span>
+                <span class="px-2 hover:text-green-400"><a href="{{route('about-us')}}">About</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('contact')}}">Contact</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('recipes')}}">Recipes</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('newsroom')}}">Newsroom</a></span>
+                <span class="px-2 hover:text-green-400 border-l border-gray-700 dark:border-gray-300"><a href="{{route('privacy-policy')}}">Privacy Policy</a></span>
             </div>
 
             <div class="flex py-2 space-x-6 sm:justify-center">

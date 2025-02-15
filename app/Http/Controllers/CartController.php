@@ -92,6 +92,9 @@ class CartController extends Controller
      */
     public function update(Request $request, Cart $cart)
     {
+        if ($cart->food->available_quantity < $request->quantity) {
+            return redirect()->back()->with('message', $request->quantity . ' items are not available for ' . $cart->food->food_name);
+        }
         $formFields = $request->validate([
             'quantity' => ['required', 'numeric'],
         ]);

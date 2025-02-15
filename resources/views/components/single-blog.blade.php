@@ -1,7 +1,7 @@
-<div class=" basis-1/3 max-md:basis-1 flex justify-center items-center">
+<div class=" basis-1/3 max-md:basis-1 flex justify-center items-center ">
     <div class=" mx-auto">
         <!-- Centering wrapper -->
-        <div class="relative flex w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+        <div class="relative flex w-full flex-col rounded-xl dark:bg-gray-800 dark:text-white bg-white bg-clip-border text-gray-700 shadow-lg">
             <div
                 class="relative mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-xl bg-blue-gray-500 bg-clip-border shadow-blue-gray-500/40">
                 <img
@@ -39,7 +39,7 @@
                         5.0
                     </p>
                 </div>
-                <p class="block font-sans text-base antialiased font-light leading-relaxed text-gray-700">
+                <p class="block dark:text-white font-sans text-base antialiased font-light leading-relaxed text-gray-700">
                     Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone
                     walls, and open meadows.
                 </p>

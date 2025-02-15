@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use App\Models\Vendor;
@@ -325,11 +326,12 @@ class LocationController extends Controller
         }
 
         $nearbyFoodItems = $foodQuery->paginate(8);
+        $categories = Category::where('parent_id', null)->get();
 
 
         return view('foods_groceries', compact(['location', 'latitude', 'longitude',
                       'nearbyVendors', 'numberOfRows',
-                      'categoryId', 'nearbyFoodItems',
+                      'categoryId', 'nearbyFoodItems', 'categories',
                       'nearVendorFoodCategories',
                       'selectedCategory',
                       'food_name']));

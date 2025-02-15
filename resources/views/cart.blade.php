@@ -71,9 +71,9 @@
                 </div>
                 @if ($cartCount == 0)
                 <div class="md:w-1/3">
-                    {{-- <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="bg-white rounded-lg shadow-md p-6">
                         <a class="bg-green-500 text-white py-2 px-4 rounded-lg mt-4 w-full" href="{{route('nearby.all.foods')}}"> Add Foods and Groceries</a>
-                    </div> --}}
+                    </div>
                 </div>
                 @else
                 <div class="md:w-1/3">

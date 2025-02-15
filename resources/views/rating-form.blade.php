@@ -16,11 +16,11 @@
             <x-input-label for="rating" :value="__('What\'s your rating on food?')" />
             <select name="rating" id="rating" class="border-gray-300 block mt-1 w-full dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm">
                 <option value="">Select your rating</option>
-                <option value="1" {{$ratingByUser->rating == 1 ? 'selected' : '' }}>1 star</option>
-                <option value="2" {{$ratingByUser->rating == 2 ? 'selected' : '' }}>2 star</option>
-                <option value="3" {{$ratingByUser->rating == 3 ? 'selected' : '' }}>3 star</option>
-                <option value="4" {{$ratingByUser->rating == 4 ? 'selected' : '' }}>4 star</option>
-                <option value="5" {{$ratingByUser->rating == 5 ? 'selected' : '' }}>5 star</option>
+                <option value="1" {{$ratingByUser?->rating == 1 ? 'selected' : '' }}>1 star</option>
+                <option value="2" {{$ratingByUser?->rating == 2 ? 'selected' : '' }}>2 star</option>
+                <option value="3" {{$ratingByUser?->rating == 3 ? 'selected' : '' }}>3 star</option>
+                <option value="4" {{$ratingByUser?->rating == 4 ? 'selected' : '' }}>4 star</option>
+                <option value="5" {{$ratingByUser?->rating == 5 ? 'selected' : '' }}>5 star</option>
             </select>
             <x-input-error :messages="$errors->get('rating')" class="mt-2" />
         </div>
@@ -28,7 +28,7 @@
         <!-- cooment -->
         <div class="mt-4">
             <x-input-label for="comment" :value="__('Comment')" />
-            <textarea name="comment" id="comment"  rows="4" class="w-full rounded-md focus:border-green-500 focus:ring-green-500">{{$ratingByUser->comment}}</textarea>
+            <textarea name="comment" id="comment"  rows="4" class="w-full rounded-md focus:border-green-500 focus:ring-green-500">{{$ratingByUser?->comment}}</textarea>
             <x-input-error :messages="$errors->get('comment')" class="mt-2" />
         </div>
 

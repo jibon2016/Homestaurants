@@ -92,7 +92,7 @@
                 <div class="flex flex-col justify-center bg-white border border-gray-300 rounded shadow-lg dark:bg-gray-800 dark:border-gray-700">
                     <div class="flex w-full h-full">
                         <div class="flex items-center justify-center w-1/3 bg-blue-500">
-                            <p class="text-lg font-semibold text-center text-white">{{ $totalEarn }} {{ Auth::guard('vendor')->user()->currency }}</p>
+                            <p class="text-lg font-semibold text-center text-white">{{ $totalEarn + $pickupMoney }} {{ Auth::guard('vendor')->user()->currency }}</p>
                         </div>
                         <div class="flex items-center justify-center w-2/3 ">
                             <p class="text-xl text-center text-gray-900 dark:text-gray-50">Total Earn</p>
