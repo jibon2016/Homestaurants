@@ -150,20 +150,26 @@
                     <div id="card-element"></div>
                 </div>
 
-                <div id="by-card-details" class="py-4 my-2 rounded-md shadow-sm bg-gray-50" style="display: none;">
+                <div id="by-card-details" class="py-4 my-2 rounded-md shadow-sm bg-gray-50  dark:bg-gray-800 dark:text-white" style="display: none;">
                     {{-- <p class="pb-1 text-sm">Your account will be charged: {{$totalPrice + $totalDeliveryCharge}}{{$cartItem->food->currency}}</p> --}}
                     <div id="card-errors" role="alert">
                         {{-- div for showing Stripe error --}}
                     </div>
 
-                    <div id="card-element" class="px-10">
-                        <p>
-                            Bank Name: {{ $vendor->bank_name }}
-                        </p>
-                        <p>
-                            Account Name: {{ $vendor->bank_ac }}
-                        </p>
+                    <div id="card-element" class="px-10 flex justify-evenly items-center">
+                        <div>
+                            <p>
+                                Bank Name: {{ $vendor->bank_name }}
+                            </p>
+                            <p>
+                                Account Name: {{ $vendor->bank_ac }}
+                            </p>
+                        </div>
+                        @if($vendor->bank_qr)
+                        <img src="{{ asset('storage/'.$vendor->bank_qr) }}" alt="Bank QR Code" class="w-48 h-48">
+                        @endif
                     </div>
+
                 </div>
 
                 <button id="confirm-order-btn" type="submit" class="text-white bg-green-500 hover:bg-green-600 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-green-500 dark:focus:ring-green-600">Confirm Order</button>

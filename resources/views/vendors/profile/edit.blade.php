@@ -75,7 +75,7 @@
 
                             <div>
                                 <x-input-label for="profession" :value="__('Profession')" />
-                                <x-text-input id="profession" name="profession" type="text" class="mt-1 block w-full" :value="old('profession', $vendor->chef->profession)" required autofocus autocomplete="profession" />
+                                <x-text-input id="profession" name="profession" type="text" class="mt-1 block w-full" :value="old('profession', $vendor->chef?->profession)" required autofocus autocomplete="profession" />
                                 <x-input-error class="mt-2" :messages="$errors->get('profession')" />
                             </div>
 
@@ -83,37 +83,37 @@
 
                             <div>
                                 <x-input-label for="facebook_link" :value="__('Facebook')" />
-                                <x-text-input id="facebook_link" name="facebook_link" type="text" class="mt-1 block w-full" :value="old('facebook_link', $vendor->chef->facebook_link)"  />
+                                <x-text-input id="facebook_link" name="facebook_link" type="text" class="mt-1 block w-full" :value="old('facebook_link', $vendor->chef?->facebook_link)"  />
                                 <x-input-error class="mt-2" :messages="$errors->get('facebook_link')" />
                             </div>
 
                             <div>
                                 <x-input-label for="twitter_link" :value="__('Twitter')" />
-                                <x-text-input id="twitter_link" name="twitter_link" type="text" class="mt-1 block w-full" :value="old('twitter_link', $vendor->chef->twitter_link)"  />
+                                <x-text-input id="twitter_link" name="twitter_link" type="text" class="mt-1 block w-full" :value="old('twitter_link', $vendor->chef?->twitter_link)"  />
                                 <x-input-error class="mt-2" :messages="$errors->get('twitter_link')" />
                             </div>
 
                             <div>
                                 <x-input-label for="instagram_link" :value="__('Instagram')" />
-                                <x-text-input id="instagram_link" name="instagram_link" type="text" class="mt-1 block w-full" :value="old('instagram_link', $vendor->chef->instagram_link)"  />
+                                <x-text-input id="instagram_link" name="instagram_link" type="text" class="mt-1 block w-full" :value="old('instagram_link', $vendor->chef?->instagram_link)"  />
                                 <x-input-error class="mt-2" :messages="$errors->get('instagram_link')" />
                             </div>
 
                             <div>
                                 <x-input-label for="linkedin_link" :value="__('Linkedin')" />
-                                <x-text-input id="linkedin_link" name="linkedin_link" type="text" class="mt-1 block w-full" :value="old('linkedin_link', $vendor->chef->linkedin_link)"  />
+                                <x-text-input id="linkedin_link" name="linkedin_link" type="text" class="mt-1 block w-full" :value="old('linkedin_link', $vendor->chef?->linkedin_link)"  />
                                 <x-input-error class="mt-2" :messages="$errors->get('facebook_link')" />
                             </div>
 
                             <div>
                                 <x-input-label for="youtube_link" :value="__('Youtube')" />
-                                <x-text-input id="youtube_link" name="youtube_link" type="text" class="mt-1 block w-full" :value="old('youtube_link', $vendor->chef->youtube_link)"  />
+                                <x-text-input id="youtube_link" name="youtube_link" type="text" class="mt-1 block w-full" :value="old('youtube_link', $vendor->chef?->youtube_link)"  />
                                 <x-input-error class="mt-2" :messages="$errors->get('youtube_link')" />
                             </div>
 
                             <div>
                                 <x-input-label for="description" :value="__('About You')" />
-                                <textarea name="description" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm mt-1 block w-full" id="description" cols="30" rows="6">{{old('description', $vendor->chef->description)}}</textarea>
+                                <textarea name="description" class="border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-green-500 dark:focus:border-green-600 focus:ring-green-500 dark:focus:ring-green-600 rounded-md shadow-sm mt-1 block w-full" id="description" cols="30" rows="6">{{old('description', $vendor->chef?->description)}}</textarea>
                                 <x-input-error class="mt-2" :messages="$errors->get('description')" />
                             </div>
 

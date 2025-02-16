@@ -80,5 +80,18 @@
     <x-flowbite-footer />
 
     @livewireScripts
+
+    <script>
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('notify', (event) => {
+                let flashMsg = document.querySelector('.flash-msg');
+                flashMsg.classList.remove('hidden');
+                flashMsg.innerHTML = event[0].message;
+                setTimeout(() => {
+                    flashMsg.classList.add('hidden');
+                }, 2000);
+            });
+        });
+    </script>
     </body>
 </html>

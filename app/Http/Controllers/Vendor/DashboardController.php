@@ -120,7 +120,11 @@ class DashboardController extends Controller
         $request->validate([
             'bank_name' => 'required',
             'bank_ac' => 'required',
+            'bank_qr' => 'nullable|image|mimes:jpeg,png,jpg,jfif,webp|max:2048',
         ]);
+        if($request->hasFile('bank_qr')){
+            $vendor->bank_qr =  $request->file('bank_qr')->store('banks', 'public');
+        }
         $vendor->bank_name = $request->bank_name;
         $vendor->bank_ac = $request->bank_ac;
         $vendor->save();

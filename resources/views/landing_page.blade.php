@@ -158,7 +158,7 @@
 
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key={{env('GOOGLE_MAPS_API_KEY')}}&libraries=places&callback=initAutocomplete"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-IU2pPLhjggY8Nn3lcVgGUMqvY62w1r0&libraries=places&callback=initAutocomplete"></script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.0.2/glide.js"></script>
 

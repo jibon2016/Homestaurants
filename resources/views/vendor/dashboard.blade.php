@@ -178,7 +178,7 @@
         </div>
     </div>
     <div class=" mx-auto ">
-        <form action="{{route('update-bank-details', ['vendor' => $vendor->id ])}}" method="POST">
+        <form action="{{route('update-bank-details', ['vendor' => $vendor->id ])}}" method="POST" enctype="multipart/form-data">
         <div class="grid gap-2">
             <div class="justify-center w-full py-4 mx-auto lg:flex lg:gap-6">
                 <div class="px-4 py-4 rounded-md shadow-md dark:bg-gray-700">
@@ -190,8 +190,15 @@
                         <x-input-error :messages="$errors->get('bank_name')" class="mt-2" />
 
                         <x-input-label for="bank_ac" :value="__('Bank Account Details')" />
-                        <x-text-input id="bank_ac" class="w-full mt-1" type="text" name="bank_ac" :value=" $vendor->bank_ac " required autofocus autocomplete="bank_ac" />
+                        <x-text-input id="bank_ac" class="w-full mt-1 mb-3" type="text" name="bank_ac" :value=" $vendor->bank_ac " required autofocus autocomplete="bank_ac" />
                         <x-input-error :messages="$errors->get('bank_ac')" class="mt-2" />
+
+                        <x-input-label for="bank_qr" :value="__('Bank QR')" />
+                        <x-text-input id="bank_qr" class="w-full mt-1 mb-3" type="file" name="bank_qr" />
+                        <x-input-error :messages="$errors->get('bank_qr')" class="mt-2" />
+                        @if($vendor->bank_qr)
+                            <img src="{{ asset('storage/'.$vendor->bank_qr) }} " class="w-24 h-24" alt="" />
+                        @endif
 
                         <x-primary-button class="mt-2">Update</x-primary-button>
                     </div>

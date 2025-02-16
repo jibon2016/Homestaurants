@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('vendors', function (Blueprint $table) {
             $table->string('bank_name')->nullable()->after('vendor_longitude');
             $table->string('bank_ac')->nullable()->after('bank_name');
+            $table->string('bank_qr')->nullable()->after('bank_ac');
         });
     }
 
@@ -25,6 +26,7 @@ return new class extends Migration
         Schema::table('vendors', function (Blueprint $table) {
             $table->dropColumn('bank_name');
             $table->dropColumn('bank_ac');
+            $table->dropColumn('bank_qr');
         });
     }
 };

@@ -1,13 +1,16 @@
 <x-main-layout>
 
     <div class="bg-gray-100 dark:bg-gray-950 py-8 mt-5 pt-20">
-
         @if (session()->has('message'))
-        <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)"
-            class="bg-green-300 max-w-sm mx-auto items-right text-gray-800 dark:text-gray-950 font-semibold px-4 py-2 rounded-md">
-            {{ session('message') }}
-        </div>
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 2000)"
+                class="bg-green-300 max-w-sm mx-auto items-right text-gray-800 dark:text-gray-950 font-semibold px-4 py-2 rounded-md">
+                {{ session('message') }}
+            </div>
         @endif
+
+            <div class="flash-msg hidden bg-green-300 max-w-sm mx-auto items-right text-gray-800 dark:text-gray-950 font-semibold px-4 py-2 rounded-md">
+                {{ session('message') }}
+            </div>
 
         <div class="container mx-auto px-4">
             <h1 class="text-2xl dark:text-gray-200 font-semibold mb-4 text-center lg:mt-5">My Plate</h1>
@@ -44,22 +47,23 @@
                                         </div>
                                     </td>
                                     <td class="py-4">
-                                        <form action="{{route('cart-update', ['cart' =>$cartItem->id])}}" method="POST">
-                                            @csrf
-                                            @method('PUT')
-                                            {{-- <div x-data="{ count: {{$cartItem->quantity}} }" class="flex items-center">
-                                                <button type="button" class="px-2 py-1 text-gray-600 bg-gray-100 rounded-md" x-on:click="count++">+</button>
-                                                <input type="number" min="1" name="quantity" class="w-16 px-2 py-1 text-center text-gray-700 bg-gray-100 rounded-md" x-model="count" x-on:input="count = parseInt($event.target.value)">
-                                                <button type="button" class="px-2 py-1 text-gray-600 bg-gray-100 rounded-md" x-on:click="count > 1 ? count-- : null">-</button>
-                                            </div> --}}
-                                            <div x-data="{ count: {{$cartItem->quantity}} }" class="flex items-center space-x-0">
-                                                <button type="button" class="px-2 py-1 text-gray-800 bg-gray-100 border border-gray-700 rounded-l-sm" x-on:click="count > 1 ? count-- : null">-</button>
-                                                <input type="number" min="1" name="quantity" class="w-16 px-2 py-1 text-center text-gray-700 bg-gray-100" x-model="count" x-on:input="count = parseInt($event.target.value)">
-                                                <button type="button" class="px-2 py-1 text-gray-800 bg-gray-100 rounded-r-sm border border-gray-700" x-on:click="count++">+</button>
-                                            </div>
+                                        <livewire:cart-quantity :cartItem="$cartItem" :key="$cartItem->id" />
+{{--                                        <form action="{{route('cart-update', ['cart' =>$cartItem->id])}}" method="POST">--}}
+{{--                                            @csrf--}}
+{{--                                            @method('PUT')--}}
+{{--                                            --}}{{-- <div x-data="{ count: {{$cartItem->quantity}} }" class="flex items-center">--}}
+{{--                                                <button type="button" class="px-2 py-1 text-gray-600 bg-gray-100 rounded-md" x-on:click="count++">+</button>--}}
+{{--                                                <input type="number" min="1" name="quantity" class="w-16 px-2 py-1 text-center text-gray-700 bg-gray-100 rounded-md" x-model="count" x-on:input="count = parseInt($event.target.value)">--}}
+{{--                                                <button type="button" class="px-2 py-1 text-gray-600 bg-gray-100 rounded-md" x-on:click="count > 1 ? count-- : null">-</button>--}}
+{{--                                            </div> --}}
+{{--                                            <div x-data="{ count: {{$cartItem->quantity}} }" class="flex items-center space-x-0">--}}
+{{--                                                <button type="button" class="px-2 py-1 text-gray-800 bg-gray-100 border border-gray-700 rounded-l-sm" x-on:click="count > 1 ? count-- : null">-</button>--}}
+{{--                                                <input type="number" min="1" name="quantity" class="w-16 px-2 py-1 text-center text-gray-700 bg-gray-100" x-model="count" x-on:input="count = parseInt($event.target.value)">--}}
+{{--                                                <button type="button" class="px-2 py-1 text-gray-800 bg-gray-100 rounded-r-sm border border-gray-700" x-on:click="count++">+</button>--}}
+{{--                                            </div>--}}
 
-                                            <button type="submit" class="text-green-500">Update</button>
-                                        </form>
+{{--                                            <button type="submit" class="text-green-500">Update</button>--}}
+{{--                                        </form>--}}
                                     </td>
 
                                 </tr>
@@ -113,4 +117,4 @@
         }
 
     </script> --}}
-</x-main-layout>
+    </x-main-layout>
