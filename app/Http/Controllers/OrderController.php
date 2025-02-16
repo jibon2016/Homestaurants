@@ -36,6 +36,7 @@ class OrderController extends Controller
         //dd($groupedCartItems);
         $totalDeliveryCharge = 0;
         $totalPrice = 0;
+        $vendor = null;
 
         foreach ($groupedCartItems as $vendorId => $cartItems) {
             $vendor = Vendor::find($vendorId);
@@ -76,6 +77,7 @@ class OrderController extends Controller
             'cartItems' => $cartItems,
             'totalPrice' => $totalPrice,
             'groupedCartItems' => $groupedCartItems,
+            'vendor' => $vendor,
         ]);
     }
 

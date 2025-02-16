@@ -115,6 +115,7 @@ Route::middleware(['auth:vendor', 'vendor.mail.verified:vendor', 'restrict.unver
     Route::get('vendor/dashboard', [Vendor\DashboardController::class, 'dashboard'])->name('vendor.dashboard');
     Route::get('/vendor/dashboard/filter', [Vendor\DashboardController::class, 'filter'])->name('vendor.dashboard.filter');
 
+
     Route::get('vendor/plans', [PlanController::class, 'index'])->name('vendor.plans');
     Route::get('vendor/plans/{plan}', [PlanController::class, 'show'])->name('plans.show');
     Route::post('vendor/subscription', [PlanController::class, 'subscription'])->name('subscription.create');
@@ -137,6 +138,7 @@ Route::middleware(['auth:vendor', 'restrict.unverified.vendor'])->prefix('vendor
 
     // Create or update vendor delivery charge
     Route::post('edit-delivery-charge', [Vendor\DashboardController::class, 'createOrUpdateCharge'])->name('edit-delivery-charge');
+    Route::post('update/{vendor}/bank-details', [Vendor\DashboardController::class, 'updateBankDetails'])->name('update-bank-details');
     // Create or update vendor withdraw method
     Route::post('edit-withdraw-method', [Vendor\DashboardController::class, 'createOrUpdateWithdrawAccount'])->name('edit-withdraw-account');
     // withdraw request

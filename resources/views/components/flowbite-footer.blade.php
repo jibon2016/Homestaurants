@@ -46,7 +46,7 @@
     <div class="max-w-3xl mx-auto dark:text-white text-gray-900">
         <div class="text-center">
             <div class="flex justify-center pt-5 pb-2">
-                <x-flowbite-logo />
+                <x-favicon-logo />
             </div>
             <div class="flex justify-center py-5">
                 <div class="flex items-center px-4 py-2 border border-gray-600 dark:border-gray-200 rounded-lg w-44 mx-2">

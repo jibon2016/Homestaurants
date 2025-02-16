@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Vendor;
 
 use App\Http\Controllers\Controller;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,7 @@ class DashboardController extends Controller
     // Display the default dashboard
     public function dashboard() {
         $vendorId = Auth::guard('vendor')->user()->id;
+        $vendor = Auth::guard('vendor')->user();
         $totalAddedFoods = Food::where('vendor_id', $vendorId)->count();
         $deliveryCharge = DeliveryCharge::where('vendor_id', $vendorId)->first();
         $withdrawAccount = WithdrawAccount::where('vendor_id', $vendorId)->first();
@@ -36,6 +38,7 @@ class DashboardController extends Controller
             'withdrawAccount' => $withdrawAccount,
             'totalWithdraw' => $totalWithdraw,
             'timePeriod' => 'daily',
+            'vendor' => $vendor,
         ]);
     }
 
@@ -111,6 +114,19 @@ class DashboardController extends Controller
 
         return redirect()->back()->with('message', 'Delivery charge updated!');
     }
+
+    public function updateBankDetails(Request $request, Vendor $vendor)
+    {
+        $request->validate([
+            'bank_name' => 'required',
+            'bank_ac' => 'required',
+        ]);
+        $vendor->bank_name = $request->bank_name;
+        $vendor->bank_ac = $request->bank_ac;
+        $vendor->save();
+        return redirect()->back()->with('message', 'Bank details updated!');
+    }
+
 
     // Create or update payment methods for withdraw request
     public function createOrUpdateWithdrawAccount(Request $request)
